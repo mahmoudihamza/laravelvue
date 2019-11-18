@@ -1,7 +1,7 @@
 <template>
 
         <tr>
-            <td><input type="checkbox"/></td><td>{{id}}</td><td>{{designation}}</td><td>{{prix_achat}}</td><td>{{prix_vente}}</td><td>{{tva}}</td><td>{{famille}}</td>
+            <td><input type="checkbox"/></td><td>{{id}}</td><td>{{designation}}</td><td>{{prix_achat}}</td><td>{{prix_vente}}</td><td>{{tva}}</td><td>{{famille}}</td><td><span class="remove-item" @click="removeProduct(id)">&times;</span></td>
         </tr>
 
 </template>
@@ -25,8 +25,20 @@
                 'famille':this.content.famille,
 
             }
+        },
+        methods: {
+            removeProduct(id) {
+                this.$store.dispatch('deleteProduct', id)
+            },
         }
+
 
 
     }
 </script>
+<style scoped>
+
+    .remove-item{
+        cursor: pointer;
+    }
+</style>

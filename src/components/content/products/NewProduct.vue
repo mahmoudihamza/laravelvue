@@ -48,7 +48,7 @@
         },
         data(){
             return{
-                idForContent :5,
+
                 newDesignation :'',
                 newPrixAchat :'',
                 newPrixVente :'',
@@ -60,7 +60,7 @@
         methods:{
             addContent(){
                 this.$store.dispatch('addContent', {
-                    id: this.idForContent,
+
                     designation: this.newDesignation,
                     prix_achat: this.newPrixAchat,
                     prix_vente: this.newPrixVente,
@@ -72,8 +72,8 @@
                     this.newPrixAchat ='',
                     this.newPrixVente ='',
                     this.newTva ='',
-                    this.newFamille='',
-                    this.idForContent++
+                    this.newFamille=''
+
 
             }
         }

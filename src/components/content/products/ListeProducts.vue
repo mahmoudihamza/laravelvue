@@ -9,7 +9,7 @@
             <form action="" method="POST">
                 <table class="table table-striped mytable">
                     <tr>
-                        <th></th><th>Numero</th><th>Designation</th><th>Prix achat</th><th>Prix vente</th><th>Tva</th><th>Famille</th>
+                        <th></th><th>Numero</th><th>Designation</th><th>Prix achat</th><th>Prix vente</th><th>Tva</th><th>Famille</th><th>Actions</th>
                     </tr>
 
                     <ProductItem  v-for="content in AllContents" :key="content.id" :content="content"></ProductItem>
@@ -70,6 +70,9 @@
 
             }
         },
+        created() {
+            this.$store.dispatch('retrieveContents')
+        },
         computed:{
             AllContents(){
                 return this.$store.getters.AllContents;
@@ -86,6 +89,9 @@
                       this.checked = this.content.checked
                     }
             }*/
+        },
+        methods:{
+
         }
 
     }
